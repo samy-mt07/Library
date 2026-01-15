@@ -1,5 +1,12 @@
-**/bin/
-**/obj/
+<<<<<<< HEAD
+# Visual Studio
 .vs/
 *.user
 *.suo
+
+# Build outputs
+**/bin/
+**/obj/
+=======
+
+>>>>>>> 6d2c2a5 (Ignore VISUAL STUDIO)
