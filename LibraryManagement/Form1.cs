@@ -3,8 +3,6 @@
 using Library.Domain.Entities;
 using Library.Infrastructure.Data;
 
-=======
->>>>>>> e80ee4aa827c85436f43b3d8139a9c038cd52199
 namespace LibraryManagement
 {
     public partial class Form1 : Form
@@ -56,7 +54,7 @@ namespace LibraryManagement
 
                 await _empruntService.CreerEmpruntAsync(usagerId, livreId, retourPrevu);
 
-                MessageBox.Show("✅ Emprunt créé !");
+                MessageBox.Show("Emprunt créé !");
                 await ReloadEmpruntsTab();
             }
             catch (Exception ex)
@@ -79,7 +77,7 @@ namespace LibraryManagement
 
                 await _empruntService.RetournerAsync(empruntId);
 
-                MessageBox.Show("✅ Retour effectué !");
+                MessageBox.Show("Retour effectué !");
                 await ReloadEmpruntsTab();
             }
             catch (Exception ex)
@@ -110,7 +108,7 @@ namespace LibraryManagement
 
                 await _activiteService.CreerAsync(titre, type, capacite);
 
-                MessageBox.Show("✅ Activité créée !");
+                MessageBox.Show("Activité créée !");
                 await ReloadActivitesTab();
             }
             catch (Exception ex)
@@ -247,18 +245,18 @@ namespace LibraryManagement
 
                 await _activiteService.InscrireAsync(usagerId, activiteId);
 
-                MessageBox.Show("✅ Usager inscrit !");
+                MessageBox.Show("Usager inscrit !");
                 await LoadParticipations();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("❌ " + ex.Message);
             }
-=======
+
         public Form1()
         {
             InitializeComponent();
->>>>>>> e80ee4aa827c85436f43b3d8139a9c038cd52199
+
         }
     }
 }
