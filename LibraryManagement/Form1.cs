@@ -1,11 +1,15 @@
+<<<<<<< HEAD
 ﻿using Library.Application.Services;
 using Library.Domain.Entities;
 using Library.Infrastructure.Data;
 
+=======
+>>>>>>> e80ee4aa827c85436f43b3d8139a9c038cd52199
 namespace LibraryManagement
 {
     public partial class Form1 : Form
     {
+<<<<<<< HEAD
         private readonly DbFactory _dbFactory = new DbFactory();
 
         private readonly EmpruntService _empruntService;
@@ -250,6 +254,11 @@ namespace LibraryManagement
             {
                 MessageBox.Show("❌ " + ex.Message);
             }
+=======
+        public Form1()
+        {
+            InitializeComponent();
+>>>>>>> e80ee4aa827c85436f43b3d8139a9c038cd52199
         }
     }
 }

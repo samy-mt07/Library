@@ -89,6 +89,7 @@ namespace Library.Infrastructure.Migrations
                     b.ToTable("Emprunts");
                 });
 
+<<<<<<< HEAD
             modelBuilder.Entity("Library.Domain.Entities.EmpruntMateriel", b =>
                 {
                     b.Property<int>("Id")
@@ -157,6 +158,8 @@ namespace Library.Infrastructure.Migrations
                     b.ToTable("Evaluations");
                 });
 
+=======
+>>>>>>> e80ee4aa827c85436f43b3d8139a9c038cd52199
             modelBuilder.Entity("Library.Domain.Entities.Livre", b =>
                 {
                     b.Property<int>("Id")
@@ -181,6 +184,7 @@ namespace Library.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
+<<<<<<< HEAD
                     b.ToTable("Livres");
                 });
 
@@ -205,6 +209,9 @@ namespace Library.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Materiels");
+=======
+                    b.ToTable("Livre");
+>>>>>>> e80ee4aa827c85436f43b3d8139a9c038cd52199
                 });
 
             modelBuilder.Entity("Library.Domain.Entities.Participation", b =>
@@ -253,12 +260,17 @@ namespace Library.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
+<<<<<<< HEAD
                     b.ToTable("Usagers");
+=======
+                    b.ToTable("Usager");
+>>>>>>> e80ee4aa827c85436f43b3d8139a9c038cd52199
                 });
 
             modelBuilder.Entity("Library.Domain.Entities.Emprunt", b =>
                 {
                     b.HasOne("Library.Domain.Entities.Livre", "Livre")
+<<<<<<< HEAD
                         .WithMany("Emprunts")
                         .HasForeignKey("LivreId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -301,6 +313,8 @@ namespace Library.Infrastructure.Migrations
             modelBuilder.Entity("Library.Domain.Entities.Evaluation", b =>
                 {
                     b.HasOne("Library.Domain.Entities.Livre", "Livre")
+=======
+>>>>>>> e80ee4aa827c85436f43b3d8139a9c038cd52199
                         .WithMany()
                         .HasForeignKey("LivreId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -326,7 +340,11 @@ namespace Library.Infrastructure.Migrations
                         .IsRequired();
 
                     b.HasOne("Library.Domain.Entities.Usager", "Usager")
+<<<<<<< HEAD
                         .WithMany("Participations")
+=======
+                        .WithMany()
+>>>>>>> e80ee4aa827c85436f43b3d8139a9c038cd52199
                         .HasForeignKey("UsagerId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -340,6 +358,7 @@ namespace Library.Infrastructure.Migrations
                 {
                     b.Navigation("Participations");
                 });
+<<<<<<< HEAD
 
             modelBuilder.Entity("Library.Domain.Entities.Livre", b =>
                 {
@@ -357,6 +376,8 @@ namespace Library.Infrastructure.Migrations
 
                     b.Navigation("Participations");
                 });
+=======
+>>>>>>> e80ee4aa827c85436f43b3d8139a9c038cd52199
 #pragma warning restore 612, 618
         }
     }

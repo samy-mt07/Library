@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+<<<<<<< HEAD
             lblTitre = new Label();
             tabControl1 = new TabControl();
             lblUsagerId = new TabPage();
@@ -330,10 +331,15 @@
             lblTitrer.TabIndex = 0;
             lblTitrer.Text = "titre";
             // 
+=======
+            SuspendLayout();
+            // 
+>>>>>>> e80ee4aa827c85436f43b3d8139a9c038cd52199
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+<<<<<<< HEAD
             ClientSize = new Size(1042, 857);
             Controls.Add(tabControl1);
             Controls.Add(lblTitre);
@@ -383,5 +389,14 @@
         private Button btnInscrire;
         private ComboBox cboUsagerActivite;
         private Label label3;
+=======
+            ClientSize = new Size(1042, 715);
+            Name = "Form1";
+            Text = "Form1";
+            ResumeLayout(false);
+        }
+
+        #endregion
+>>>>>>> e80ee4aa827c85436f43b3d8139a9c038cd52199
     }
 }
