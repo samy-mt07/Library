@@ -23,7 +23,7 @@ namespace Library.Application.Services
         public async Task EmprunterMaterielAsync(int materielId, int usagerId)
         {
             var materiel = await _db.Materiels.FindAsync(materielId);
-            if (materiel == null || materiel.Quantite <= 0)
+            if (materiel == null || materiel.QuantiteTotale <= 0)
                 throw new Exception("Matériel non disponible.");
 
             var emprunt = new EmpruntMateriel
@@ -31,10 +31,10 @@ namespace Library.Application.Services
                 MaterielId = materielId,
                 UsagerId = usagerId,
                 DateEmprunt = DateTime.Now,
-                DateRetourPrevue = DateTime.Now.AddDays(7)
+                DateRetour = DateTime.Now.AddDays(7)
             };
 
-            materiel.Quantite--;
+            materiel.QuantiteTotale--;
 
             _db.EmpruntsMateriel.Add(emprunt);
             await _db.SaveChangesAsync();
@@ -50,7 +50,7 @@ namespace Library.Application.Services
                 throw new Exception("Emprunt introuvable.");
 
             emprunt.DateRetour = DateTime.Now;
-            emprunt.Materiel.Quantite++;
+            emprunt.Materiel.QuantiteTotale++;
 
             await _db.SaveChangesAsync();
         }

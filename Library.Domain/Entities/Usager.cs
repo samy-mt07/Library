@@ -19,7 +19,7 @@ namespace Library.Domain.Entities
         public string Telephone { get; set; } = string.Empty;
 
         public bool Actif { get; set; } = true;
-        public List<Emprunt> Emprunts { get; set; } = new();
+        public ICollection<Emprunt> Emprunts { get; set; } = new List<Emprunt>();
         public List<Participation> Participations { get; set; } = new();
 
     }

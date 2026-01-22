@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Library.Infrastructure.Migrations
 {
     [DbContext(typeof(BibliothequeDbContext))]
-    [Migration("20260122022228_AddEvaluations")]
-    partial class AddEvaluations
+    [Migration("20260122053513_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -80,24 +80,14 @@ namespace Library.Infrastructure.Migrations
                     b.Property<int>("LivreId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("LivreId1")
-                        .HasColumnType("int");
-
                     b.Property<int>("UsagerId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("UsagerId1")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("LivreId");
 
-                    b.HasIndex("LivreId1");
-
                     b.HasIndex("UsagerId");
-
-                    b.HasIndex("UsagerId1");
 
                     b.ToTable("Emprunts");
                 });
@@ -116,10 +106,10 @@ namespace Library.Infrastructure.Migrations
                     b.Property<DateTime?>("DateRetour")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("DateRetourPrevue")
-                        .HasColumnType("datetime2");
-
                     b.Property<int>("MaterielId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("MaterielId1")
                         .HasColumnType("int");
 
                     b.Property<int>("UsagerId")
@@ -128,6 +118,8 @@ namespace Library.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("MaterielId");
+
+                    b.HasIndex("MaterielId1");
 
                     b.HasIndex("UsagerId");
 
@@ -192,7 +184,7 @@ namespace Library.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Livre");
+                    b.ToTable("Livres");
                 });
 
             modelBuilder.Entity("Library.Domain.Entities.Materiel", b =>
@@ -203,15 +195,14 @@ namespace Library.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Etat")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool>("Actif")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Nom")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Quantite")
+                    b.Property<int>("QuantiteTotale")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -233,14 +224,9 @@ namespace Library.Infrastructure.Migrations
                     b.Property<bool?>("Presence")
                         .HasColumnType("bit");
 
-                    b.Property<int?>("UsagerId1")
-                        .HasColumnType("int");
-
                     b.HasKey("UsagerId", "ActiviteId");
 
                     b.HasIndex("ActiviteId");
-
-                    b.HasIndex("UsagerId1");
 
                     b.ToTable("Participations");
                 });
@@ -270,30 +256,22 @@ namespace Library.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Usager");
+                    b.ToTable("Usagers");
                 });
 
             modelBuilder.Entity("Library.Domain.Entities.Emprunt", b =>
                 {
                     b.HasOne("Library.Domain.Entities.Livre", "Livre")
-                        .WithMany()
+                        .WithMany("Emprunts")
                         .HasForeignKey("LivreId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("Library.Domain.Entities.Livre", null)
-                        .WithMany("Emprunts")
-                        .HasForeignKey("LivreId1");
-
                     b.HasOne("Library.Domain.Entities.Usager", "Usager")
-                        .WithMany()
+                        .WithMany("Emprunts")
                         .HasForeignKey("UsagerId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
-
-                    b.HasOne("Library.Domain.Entities.Usager", null)
-                        .WithMany("Emprunts")
-                        .HasForeignKey("UsagerId1");
 
                     b.Navigation("Livre");
 
@@ -303,10 +281,14 @@ namespace Library.Infrastructure.Migrations
             modelBuilder.Entity("Library.Domain.Entities.EmpruntMateriel", b =>
                 {
                     b.HasOne("Library.Domain.Entities.Materiel", "Materiel")
-                        .WithMany("Emprunts")
+                        .WithMany()
                         .HasForeignKey("MaterielId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
+                    b.HasOne("Library.Domain.Entities.Materiel", null)
+                        .WithMany("Emprunts")
+                        .HasForeignKey("MaterielId1");
 
                     b.HasOne("Library.Domain.Entities.Usager", "Usager")
                         .WithMany()
@@ -324,7 +306,7 @@ namespace Library.Infrastructure.Migrations
                     b.HasOne("Library.Domain.Entities.Livre", "Livre")
                         .WithMany()
                         .HasForeignKey("LivreId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Library.Domain.Entities.Usager", "Usager")
@@ -347,14 +329,10 @@ namespace Library.Infrastructure.Migrations
                         .IsRequired();
 
                     b.HasOne("Library.Domain.Entities.Usager", "Usager")
-                        .WithMany()
+                        .WithMany("Participations")
                         .HasForeignKey("UsagerId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
-
-                    b.HasOne("Library.Domain.Entities.Usager", null)
-                        .WithMany("Participations")
-                        .HasForeignKey("UsagerId1");
 
                     b.Navigation("Activite");
 
