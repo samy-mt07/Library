@@ -1,12 +1,11 @@
 ﻿using Library.Domain.Entities;
-<<<<<<< HEAD
+
 using Library.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 
-=======
 using Microsoft.EntityFrameworkCore;
 using Library.Infrastructure.Data;
->>>>>>> e80ee4aa827c85436f43b3d8139a9c038cd52199
+
 namespace Library.Application.Services
 {
     public class ActiviteService
@@ -29,7 +28,6 @@ namespace Library.Application.Services
                 .ToListAsync();
         }
 
-        // ✅ 2) Créer une activité (pour btnCreerActivite)
         public async Task CreerAsync(string titre, TypeActivite type, int capaciteMax)
         {
             using var db = _factory.Create();
@@ -54,8 +52,7 @@ namespace Library.Application.Services
             await db.SaveChangesAsync();
         }
 
-        // ✅ 3) Inscrire un usager (pour btnInscrire)
-        // -> même logique que ton InscrireUsagerAsync, mais nom adapté au Form
+      
         public async Task InscrireAsync(int usagerId, int activiteId)
         {
             using var db = _factory.Create();
@@ -85,7 +82,7 @@ namespace Library.Application.Services
 
             // 3) inscrire
             db.Participations.Add(new Participation
-=======
+
         private readonly BibliothequeDbContext _db;
 
         public ActiviteService(BibliothequeDbContext db)
@@ -108,7 +105,7 @@ namespace Library.Application.Services
 
             // 3) inscrire
             _db.Participations.Add(new Participation
->>>>>>> e80ee4aa827c85436f43b3d8139a9c038cd52199
+
             {
                 UsagerId = usagerId,
                 ActiviteId = activiteId,
@@ -116,11 +113,11 @@ namespace Library.Application.Services
                 Presence = null
             });
 
-<<<<<<< HEAD
+
             await db.SaveChangesAsync();
         }
 
-        // ✅ 4) Récupérer les participations (pour dgvParticipations)
+       
         public async Task<List<Participation>> GetParticipationsAsync()
         {
             using var db = _factory.Create();
@@ -130,9 +127,9 @@ namespace Library.Application.Services
                 .Include(p => p.Activite)
                 .OrderByDescending(p => p.DateInscription)
                 .ToListAsync();
-=======
+
             await _db.SaveChangesAsync();
->>>>>>> e80ee4aa827c85436f43b3d8139a9c038cd52199
+
         }
     }
 }
