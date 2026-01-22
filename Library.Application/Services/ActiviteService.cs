@@ -10,7 +10,7 @@ namespace Library.Application.Services
 {
     public class ActiviteService
     {
-<<<<<<< HEAD
+
         private readonly DbFactory _factory;
 
         public ActiviteService(DbFactory factory)
