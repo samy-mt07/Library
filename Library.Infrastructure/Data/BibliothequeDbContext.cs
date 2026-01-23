@@ -31,9 +31,7 @@ namespace Library.Infrastructure.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // =========================
-            // Emprunt (Livre <-> Usager)
-            // =========================
+            
             modelBuilder.Entity<Emprunt>()
                 .HasOne(e => e.Usager)
                 .WithMany(u => u.Emprunts) // ✅ CORRECT
@@ -64,8 +62,7 @@ namespace Library.Infrastructure.Data
                 .HasForeignKey(p => p.ActiviteId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            // =========================
-            // EmpruntMateriel
+            
             // =========================
             modelBuilder.Entity<EmpruntMateriel>()
                 .HasOne(e => e.Materiel)
@@ -79,9 +76,7 @@ namespace Library.Infrastructure.Data
                 .HasForeignKey(e => e.UsagerId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            // =========================
-            // Evaluation (unique Usager+Livre)
-            // =========================
+    
             modelBuilder.Entity<Evaluation>()
                 .HasIndex(e => new { e.UsagerId, e.LivreId })
                 .IsUnique();

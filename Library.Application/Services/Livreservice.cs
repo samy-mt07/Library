@@ -19,7 +19,7 @@ namespace Library.Application.Services
             _factory = factory;
         }
 
-        // 📚 Tous les livres
+        
         public async Task<List<Livre>> GetAllAsync()
         {
             using var db = _factory.Create();
@@ -29,7 +29,7 @@ namespace Library.Application.Services
                 .ToListAsync();
         }
 
-        // 📗 Livres actifs seulement
+        
         public async Task<List<Livre>> GetActifsAsync()
         {
             using var db = _factory.Create();
@@ -40,7 +40,6 @@ namespace Library.Application.Services
                 .ToListAsync();
         }
 
-        // 📕 Livres disponibles (quantité restante > emprunts actifs)
         public async Task<List<Livre>> GetDisponiblesAsync()
         {
             using var db = _factory.Create();
@@ -56,7 +55,6 @@ namespace Library.Application.Services
                 .ToListAsync();
         }
 
-        // ➕ Ajouter un livre
         public async Task AjouterAsync(string titre, string isbn, int quantite)
         {
             using var db = _factory.Create();
@@ -79,7 +77,6 @@ namespace Library.Application.Services
             await db.SaveChangesAsync();
         }
 
-        // ❌ Désactiver un livre (historique conservé)
         public async Task DesactiverAsync(int livreId)
         {
             using var db = _factory.Create();

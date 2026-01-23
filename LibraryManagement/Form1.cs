@@ -199,7 +199,7 @@ namespace LibraryManagement
 
                 await _empruntService.CreerEmpruntAsync(usagerId, livreId, retourPrevu);
 
-                MessageBox.Show("✅ Emprunt créé !");
+                MessageBox.Show("Emprunt créé !");
                 await ReloadEmpruntsTab();
             }
             catch (Exception ex)
@@ -221,7 +221,7 @@ namespace LibraryManagement
                 int empruntId = (int)dgvEmpruntsLivres.CurrentRow.Cells["Id"].Value;
                 await _empruntService.RetournerAsync(empruntId);
 
-                MessageBox.Show("✅ Retour effectué !");
+                MessageBox.Show("Retour effectué !");
                 await ReloadEmpruntsTab();
             }
             catch (Exception ex)
@@ -238,6 +238,32 @@ namespace LibraryManagement
             if (cboUsagerEmprunt.SelectedValue is int usagerId)
                 await ChargerEmpruntsAsync(usagerId);
         }
+
+        private async void btnEmprunterMateriel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string titre = txtTitreActivite.Text.Trim();
+                int capacite = (int)numCapacite.Value;
+                var type = (TypeActivite)cboTypeActivite.SelectedItem;
+
+                if (titre.Length < 3)
+                {
+                    MessageBox.Show("Titre trop court.");
+                    return;
+                }
+
+                await _activiteService.CreerAsync(titre, type, capacite);
+
+                MessageBox.Show("Activité créée !");
+                await ReloadActivitesTab();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("❌ " + ex.Message);
+            }
+        }
+
 
         private async Task ChargerEmpruntsAsync(int usagerId)
         {
@@ -301,24 +327,10 @@ namespace LibraryManagement
         }
 
 
-        private async void btnEmprunterMateriel_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string titre = txtTitreActivite.Text.Trim();
-                int capacite = (int)numCapacite.Value;
-                var type = (TypeActivite)cboTypeActivite.SelectedItem;
-
-                await _activiteService.CreerAsync(titre, type, capacite);
-
-                MessageBox.Show("✅ Activité créée !");
-                await ReloadActivitesTab();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("❌ " + ex.Message);
-            }
-        }
+        //private async void btnEmprunterMateriel_Click(object sender, EventArgs e)
+        //{
+            
+        //}
 
         private async void btnInscrire_Click(object sender, EventArgs e)
         {
@@ -335,13 +347,14 @@ namespace LibraryManagement
 
                 await _activiteService.InscrireAsync(usagerId, activiteId);
 
-                MessageBox.Show("✅ Usager inscrit !");
+                MessageBox.Show("Usager inscrit !");
                 await LoadParticipations();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("❌ " + ex.Message);
             }
+
         }
 
         private void cboUsagerEmprunt_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -464,8 +477,25 @@ namespace LibraryManagement
         }
 
         private void lblUsagerIdM_Click(object sender, EventArgs e)
-        {
+        { }
 
+        private async void btnCreerActivite_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string titre = txtTitreActivite.Text.Trim();
+                int capacite = (int)numCapacite.Value;
+                var type = (TypeActivite)cboTypeActivite.SelectedItem;
+
+                await _activiteService.CreerAsync(titre, type, capacite);
+
+                MessageBox.Show("✅ Activité créée !");
+                await ReloadActivitesTab();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("❌ " + ex.Message);
+            }
         }
     }
 }

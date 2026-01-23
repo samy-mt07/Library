@@ -13,7 +13,7 @@ namespace Library.Application.Services
             _factory = factory;
         }
 
-        // ✅ Méthode attendue par ton Form
+    
         public async Task CreerEmpruntAsync(int usagerId, int livreId, DateTime retourPrevu)
         {
             using var db = _factory.Create();
@@ -49,7 +49,6 @@ namespace Library.Application.Services
             await db.SaveChangesAsync();
         }
 
-        // ✅ Méthode attendue par ton Form
         public async Task RetournerAsync(int empruntId)
         {
             using var db = _factory.Create();

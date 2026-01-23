@@ -329,7 +329,7 @@
             btnCreerActivite.TabIndex = 4;
             btnCreerActivite.Text = "Creer Activite";
             btnCreerActivite.UseVisualStyleBackColor = true;
-            btnCreerActivite.Click += btnEmprunterMateriel_Click;
+            btnCreerActivite.Click += btnCreerActivite_Click;
             // 
             // lblUsagerIdM
             // 

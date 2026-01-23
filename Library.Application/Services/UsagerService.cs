@@ -13,7 +13,7 @@ namespace Library.Application.Services
             _factory = factory;
         }
 
-        // 👥 Tous les usagers
+        
         public async Task<List<Usager>> GetAllAsync()
         {
             using var db = _factory.Create();
@@ -22,7 +22,7 @@ namespace Library.Application.Services
                 .ToListAsync();
         }
 
-        // ✅ Usagers actifs seulement
+        
         public async Task<List<Usager>> GetActifsAsync()
         {
             using var db = _factory.Create();
@@ -33,7 +33,7 @@ namespace Library.Application.Services
                 .ToListAsync();
         }
 
-        // ➕ Ajouter un usager
+    
         public async Task AjouterAsync(string nomComplet, string email, string telephone)
         {
             if (string.IsNullOrWhiteSpace(nomComplet))
@@ -54,7 +54,7 @@ namespace Library.Application.Services
             await db.SaveChangesAsync();
         }
 
-        // ❌ Désactiver un usager (historique conservé)
+        
         public async Task DesactiverAsync(int usagerId)
         {
             using var db = _factory.Create();
@@ -68,7 +68,6 @@ namespace Library.Application.Services
             await db.SaveChangesAsync();
         }
 
-        // 📊 Historique des emprunts d’un usager
         public async Task<List<Emprunt>> GetHistoriqueEmpruntsAsync(int usagerId)
         {
             using var db = _factory.Create();

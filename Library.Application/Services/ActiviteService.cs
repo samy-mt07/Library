@@ -1,4 +1,8 @@
-﻿using Library.Domain.Entities;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Library.Domain.Entities;
 using Library.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -23,7 +27,7 @@ namespace Library.Application.Services
                 .ToListAsync();
         }
 
-        // ✅ 2) Créer une activité (pour btnCreerActivite)
+        // ✅ 2) Créer une activité (pour tab Activités)
         public async Task CreerAsync(string titre, TypeActivite type, int capaciteMax)
         {
             using var db = _factory.Create();
@@ -48,8 +52,7 @@ namespace Library.Application.Services
             await db.SaveChangesAsync();
         }
 
-        // ✅ 3) Inscrire un usager (pour btnInscrire)
-        // -> même logique que ton InscrireUsagerAsync, mais nom adapté au Form
+        // ✅ 3) Inscrire un usager à une activité (avec validations TP)
         public async Task InscrireAsync(int usagerId, int activiteId)
         {
             using var db = _factory.Create();
