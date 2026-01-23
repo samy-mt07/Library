@@ -13,8 +13,8 @@ namespace Library.Domain.Entities
         public string Nom { get; set; } = string.Empty;
         public int QuantiteTotale { get; set; }
         public bool Actif { get; set; } = true;
-        public ICollection<EmpruntMateriel> Emprunts { get; set; }
-        }
+        public ICollection<EmpruntMateriel> Emprunts { get; set; } = new List<EmpruntMateriel>();
+    }
 
-    
+
 }

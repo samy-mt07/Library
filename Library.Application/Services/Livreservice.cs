@@ -1,20 +1,20 @@
 ﻿using Library.Domain.Entities;
 using Library.Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Linq;        // ✅ OBLIGATOIRE
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+
 
 
 namespace Library.Application.Services
 {
-    public class Livreservice
+    public class LivreService
     {
         private readonly DbFactory _factory;
 
-        public Livreservice(DbFactory factory)
+        public LivreService(DbFactory factory)
         {
             _factory = factory;
         }
@@ -45,14 +45,12 @@ namespace Library.Application.Services
         {
             using var db = _factory.Create();
 
+            // 🔥 Version correcte 100% async (sans Count sync)
             return await db.Livres
+                .Where(l => l.Actif)
                 .Where(l =>
-                    l.Actif &&
                     l.QuantiteTotale >
-                    db.Emprunts.Count(e =>
-                        e.LivreId == l.Id &&
-                        e.Etat == EtatEmprunt.EnCours
-                    )
+                    db.Emprunts.Count(e => e.LivreId == l.Id && e.Etat == EtatEmprunt.EnCours)
                 )
                 .OrderBy(l => l.Titre)
                 .ToListAsync();
@@ -72,7 +70,7 @@ namespace Library.Application.Services
             var livre = new Livre
             {
                 Titre = titre.Trim(),
-                Isbn = isbn.Trim(),
+                Isbn = (isbn ?? "").Trim(),
                 QuantiteTotale = quantite,
                 Actif = true
             };
@@ -87,7 +85,6 @@ namespace Library.Application.Services
             using var db = _factory.Create();
 
             var livre = await db.Livres.FindAsync(livreId);
-
             if (livre == null)
                 throw new Exception("Livre introuvable.");
 

@@ -1,17 +1,11 @@
 ﻿using Library.Domain.Entities;
-<<<<<<< HEAD
 using Library.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 
-=======
-using Microsoft.EntityFrameworkCore;
-using Library.Infrastructure.Data;
->>>>>>> e80ee4aa827c85436f43b3d8139a9c038cd52199
 namespace Library.Application.Services
 {
     public class ActiviteService
     {
-<<<<<<< HEAD
         private readonly DbFactory _factory;
 
         public ActiviteService(DbFactory factory)
@@ -85,30 +79,6 @@ namespace Library.Application.Services
 
             // 3) inscrire
             db.Participations.Add(new Participation
-=======
-        private readonly BibliothequeDbContext _db;
-
-        public ActiviteService(BibliothequeDbContext db)
-        {
-            _db = db;
-        }
-
-        public async Task InscrireUsagerAsync(int usagerId, int activiteId)
-        {
-            var activite = await _db.Activites.FirstOrDefaultAsync(a => a.Id == activiteId);
-            if (activite == null) throw new Exception("Activité introuvable.");
-
-            // 1) pas de doublon
-            bool existe = await _db.Participations.AnyAsync(p => p.UsagerId == usagerId && p.ActiviteId == activiteId);
-            if (existe) throw new Exception("L'usager est déjà inscrit à cette activité.");
-
-            // 2) capacité max
-            int count = await _db.Participations.CountAsync(p => p.ActiviteId == activiteId);
-            if (count >= activite.CapaciteMax) throw new Exception("Capacité maximale atteinte.");
-
-            // 3) inscrire
-            _db.Participations.Add(new Participation
->>>>>>> e80ee4aa827c85436f43b3d8139a9c038cd52199
             {
                 UsagerId = usagerId,
                 ActiviteId = activiteId,
@@ -116,7 +86,6 @@ namespace Library.Application.Services
                 Presence = null
             });
 
-<<<<<<< HEAD
             await db.SaveChangesAsync();
         }
 
@@ -130,9 +99,6 @@ namespace Library.Application.Services
                 .Include(p => p.Activite)
                 .OrderByDescending(p => p.DateInscription)
                 .ToListAsync();
-=======
-            await _db.SaveChangesAsync();
->>>>>>> e80ee4aa827c85436f43b3d8139a9c038cd52199
         }
     }
 }

@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-<<<<<<< HEAD
             lblTitre = new Label();
-            tabControl1 = new TabControl();
+            tabMateriel = new TabControl();
             lblUsagerId = new TabPage();
             dtRetourPrevu = new DateTimePicker();
             label2 = new Label();
@@ -56,32 +55,53 @@
             lblUsagerIdM = new Label();
             txtTitreActivite = new TextBox();
             lblTitrer = new Label();
-            tabControl1.SuspendLayout();
+            tabPage1 = new TabPage();
+            btnRetournerMateriel = new Button();
+            dgvMateriels = new DataGridView();
+            btnEmprunterMateriel = new Button();
+            dateTimePicker1 = new DateTimePicker();
+            lblRetourPrevuMateriellblRetourPrevuMateriel = new Label();
+            cboMateriel = new ComboBox();
+            label4 = new Label();
+            cboUsagerMateriel = new ComboBox();
+            lblUsagerMateriel = new Label();
+            btnAjouterMateriel = new Button();
+            numQuantiteMateriel = new NumericUpDown();
+            lblQuantiteMateriel = new Label();
+            txtNomMateriel = new TextBox();
+            lblNomMateriel = new Label();
+            tabMateriel.SuspendLayout();
             lblUsagerId.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvEmpruntsLivres).BeginInit();
             tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numCapacite).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvParticipations).BeginInit();
+            tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvMateriels).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numQuantiteMateriel).BeginInit();
             SuspendLayout();
             // 
             // lblTitre
             // 
             lblTitre.AutoSize = true;
-            lblTitre.Location = new Point(403, 32);
+            lblTitre.BorderStyle = BorderStyle.Fixed3D;
+            lblTitre.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitre.Location = new Point(382, 9);
             lblTitre.Name = "lblTitre";
-            lblTitre.Size = new Size(201, 25);
+            lblTitre.Size = new Size(296, 34);
             lblTitre.TabIndex = 0;
             lblTitre.Text = "Gestion de Bibliothèque";
             // 
-            // tabControl1
+            // tabMateriel
             // 
-            tabControl1.Controls.Add(lblUsagerId);
-            tabControl1.Controls.Add(tabPage2);
-            tabControl1.Location = new Point(47, 60);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(629, 743);
-            tabControl1.TabIndex = 1;
+            tabMateriel.Controls.Add(lblUsagerId);
+            tabMateriel.Controls.Add(tabPage2);
+            tabMateriel.Controls.Add(tabPage1);
+            tabMateriel.Location = new Point(12, 60);
+            tabMateriel.Name = "tabMateriel";
+            tabMateriel.SelectedIndex = 0;
+            tabMateriel.Size = new Size(664, 879);
+            tabMateriel.TabIndex = 1;
             // 
             // lblUsagerId
             // 
@@ -98,9 +118,9 @@
             lblUsagerId.Location = new Point(4, 34);
             lblUsagerId.Name = "lblUsagerId";
             lblUsagerId.Padding = new Padding(3);
-            lblUsagerId.Size = new Size(621, 705);
+            lblUsagerId.Size = new Size(656, 841);
             lblUsagerId.TabIndex = 0;
-            lblUsagerId.Text = "Usager ID";
+            lblUsagerId.Text = "Usager ";
             lblUsagerId.UseVisualStyleBackColor = true;
             // 
             // dtRetourPrevu
@@ -134,6 +154,7 @@
             cboUsagerEmprunt.Name = "cboUsagerEmprunt";
             cboUsagerEmprunt.Size = new Size(182, 33);
             cboUsagerEmprunt.TabIndex = 12;
+            cboUsagerEmprunt.SelectedIndexChanged += cboUsagerEmprunt_SelectedIndexChanged_1;
             // 
             // Livre
             // 
@@ -165,11 +186,11 @@
             // dgvEmpruntsLivres
             // 
             dgvEmpruntsLivres.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvEmpruntsLivres.Location = new Point(104, 325);
+            dgvEmpruntsLivres.Location = new Point(21, 358);
             dgvEmpruntsLivres.Name = "dgvEmpruntsLivres";
             dgvEmpruntsLivres.RowHeadersWidth = 62;
             dgvEmpruntsLivres.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvEmpruntsLivres.Size = new Size(360, 225);
+            dgvEmpruntsLivres.Size = new Size(595, 271);
             dgvEmpruntsLivres.TabIndex = 8;
             // 
             // btnEmprunterLivre
@@ -190,7 +211,6 @@
             label1.Size = new Size(48, 25);
             label1.TabIndex = 2;
             label1.Text = "Livre";
-            label1.Click += label1_Click;
             // 
             // tabPage2
             // 
@@ -210,9 +230,9 @@
             tabPage2.Location = new Point(4, 34);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(621, 705);
+            tabPage2.Size = new Size(656, 841);
             tabPage2.TabIndex = 1;
-            tabPage2.Text = "tabPage2";
+            tabPage2.Text = "Activite";
             tabPage2.UseVisualStyleBackColor = true;
             // 
             // btnInscrire
@@ -221,7 +241,7 @@
             btnInscrire.Name = "btnInscrire";
             btnInscrire.Size = new Size(206, 34);
             btnInscrire.TabIndex = 15;
-            btnInscrire.Text = "inscrir";
+            btnInscrire.Text = "Inscrire";
             btnInscrire.UseVisualStyleBackColor = true;
             btnInscrire.Click += btnInscrire_Click;
             // 
@@ -278,18 +298,22 @@
             // 
             // dgvParticipations
             // 
+            dgvParticipations.BackgroundColor = SystemColors.GradientInactiveCaption;
+            dgvParticipations.BorderStyle = BorderStyle.Fixed3D;
             dgvParticipations.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvParticipations.Location = new Point(125, 456);
+            dgvParticipations.Location = new Point(33, 456);
             dgvParticipations.Name = "dgvParticipations";
             dgvParticipations.ReadOnly = true;
             dgvParticipations.RowHeadersWidth = 62;
             dgvParticipations.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvParticipations.Size = new Size(360, 225);
+            dgvParticipations.Size = new Size(595, 268);
             dgvParticipations.TabIndex = 8;
+            dgvParticipations.CellContentClick += dgvParticipations_CellContentClick;
             // 
             // lblEmpruntMaterielId
             // 
             lblEmpruntMaterielId.AutoSize = true;
+            lblEmpruntMaterielId.ForeColor = SystemColors.WindowFrame;
             lblEmpruntMaterielId.Location = new Point(33, 156);
             lblEmpruntMaterielId.Name = "lblEmpruntMaterielId";
             lblEmpruntMaterielId.Size = new Size(79, 25);
@@ -298,6 +322,7 @@
             // 
             // btnCreerActivite
             // 
+            btnCreerActivite.ForeColor = SystemColors.Highlight;
             btnCreerActivite.Location = new Point(209, 218);
             btnCreerActivite.Name = "btnCreerActivite";
             btnCreerActivite.Size = new Size(206, 34);
@@ -314,6 +339,7 @@
             lblUsagerIdM.Size = new Size(47, 25);
             lblUsagerIdM.TabIndex = 2;
             lblUsagerIdM.Text = "type";
+            lblUsagerIdM.Click += lblUsagerIdM_Click;
             // 
             // txtTitreActivite
             // 
@@ -325,28 +351,176 @@
             // lblTitrer
             // 
             lblTitrer.AutoSize = true;
-            lblTitrer.Location = new Point(33, 18);
+            lblTitrer.ForeColor = Color.Teal;
+            lblTitrer.Location = new Point(37, 28);
             lblTitrer.Name = "lblTitrer";
             lblTitrer.Size = new Size(43, 25);
             lblTitrer.TabIndex = 0;
             lblTitrer.Text = "titre";
             // 
-=======
-            SuspendLayout();
+            // tabPage1
             // 
->>>>>>> e80ee4aa827c85436f43b3d8139a9c038cd52199
+            tabPage1.Controls.Add(btnRetournerMateriel);
+            tabPage1.Controls.Add(dgvMateriels);
+            tabPage1.Controls.Add(btnEmprunterMateriel);
+            tabPage1.Controls.Add(dateTimePicker1);
+            tabPage1.Controls.Add(lblRetourPrevuMateriellblRetourPrevuMateriel);
+            tabPage1.Controls.Add(cboMateriel);
+            tabPage1.Controls.Add(label4);
+            tabPage1.Controls.Add(cboUsagerMateriel);
+            tabPage1.Controls.Add(lblUsagerMateriel);
+            tabPage1.Controls.Add(btnAjouterMateriel);
+            tabPage1.Controls.Add(numQuantiteMateriel);
+            tabPage1.Controls.Add(lblQuantiteMateriel);
+            tabPage1.Controls.Add(txtNomMateriel);
+            tabPage1.Controls.Add(lblNomMateriel);
+            tabPage1.Location = new Point(4, 34);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(3);
+            tabPage1.Size = new Size(656, 841);
+            tabPage1.TabIndex = 2;
+            tabPage1.Text = "Matériel";
+            tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btnRetournerMateriel
+            // 
+            btnRetournerMateriel.Location = new Point(161, 452);
+            btnRetournerMateriel.Name = "btnRetournerMateriel";
+            btnRetournerMateriel.Size = new Size(112, 34);
+            btnRetournerMateriel.TabIndex = 13;
+            btnRetournerMateriel.Text = "Retourner";
+            btnRetournerMateriel.UseVisualStyleBackColor = true;
+            btnRetournerMateriel.Click += btnRetournerMateriel_Click;
+            // 
+            // dgvMateriels
+            // 
+            dgvMateriels.BackgroundColor = SystemColors.GradientInactiveCaption;
+            dgvMateriels.BorderStyle = BorderStyle.Fixed3D;
+            dgvMateriels.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvMateriels.Location = new Point(6, 492);
+            dgvMateriels.Name = "dgvMateriels";
+            dgvMateriels.RowHeadersWidth = 62;
+            dgvMateriels.Size = new Size(644, 259);
+            dgvMateriels.TabIndex = 12;
+            // 
+            // btnEmprunterMateriel
+            // 
+            btnEmprunterMateriel.Location = new Point(352, 452);
+            btnEmprunterMateriel.Name = "btnEmprunterMateriel";
+            btnEmprunterMateriel.Size = new Size(112, 34);
+            btnEmprunterMateriel.TabIndex = 11;
+            btnEmprunterMateriel.Text = "Emprunter";
+            btnEmprunterMateriel.UseVisualStyleBackColor = true;
+            btnEmprunterMateriel.Click += btnEmprunterMateriel_Click_1;
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(371, 406);
+            dateTimePicker1.MinDate = new DateTime(2026, 1, 22, 0, 0, 0, 0);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(218, 31);
+            dateTimePicker1.TabIndex = 10;
+            // 
+            // lblRetourPrevuMateriellblRetourPrevuMateriel
+            // 
+            lblRetourPrevuMateriellblRetourPrevuMateriel.AutoSize = true;
+            lblRetourPrevuMateriellblRetourPrevuMateriel.Location = new Point(41, 406);
+            lblRetourPrevuMateriellblRetourPrevuMateriel.Name = "lblRetourPrevuMateriellblRetourPrevuMateriel";
+            lblRetourPrevuMateriellblRetourPrevuMateriel.Size = new Size(114, 25);
+            lblRetourPrevuMateriellblRetourPrevuMateriel.TabIndex = 9;
+            lblRetourPrevuMateriellblRetourPrevuMateriel.Text = "Retour prévu";
+            // 
+            // cboMateriel
+            // 
+            cboMateriel.FormattingEnabled = true;
+            cboMateriel.Location = new Point(371, 334);
+            cboMateriel.Name = "cboMateriel";
+            cboMateriel.Size = new Size(182, 33);
+            cboMateriel.TabIndex = 8;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(36, 337);
+            label4.Name = "label4";
+            label4.Size = new Size(75, 25);
+            label4.TabIndex = 7;
+            label4.Text = "Matériel";
+            // 
+            // cboUsagerMateriel
+            // 
+            cboUsagerMateriel.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboUsagerMateriel.FormattingEnabled = true;
+            cboUsagerMateriel.Location = new Point(374, 274);
+            cboUsagerMateriel.Name = "cboUsagerMateriel";
+            cboUsagerMateriel.Size = new Size(182, 33);
+            cboUsagerMateriel.TabIndex = 6;
+            cboUsagerMateriel.SelectedIndexChanged += cboUsagerMateriel_SelectedIndexChanged;
+            // 
+            // lblUsagerMateriel
+            // 
+            lblUsagerMateriel.AutoSize = true;
+            lblUsagerMateriel.Location = new Point(36, 268);
+            lblUsagerMateriel.Name = "lblUsagerMateriel";
+            lblUsagerMateriel.Size = new Size(67, 25);
+            lblUsagerMateriel.TabIndex = 5;
+            lblUsagerMateriel.Text = "Usager";
+            // 
+            // btnAjouterMateriel
+            // 
+            btnAjouterMateriel.Location = new Point(272, 189);
+            btnAjouterMateriel.Name = "btnAjouterMateriel";
+            btnAjouterMateriel.Size = new Size(112, 34);
+            btnAjouterMateriel.TabIndex = 4;
+            btnAjouterMateriel.Text = "Ajouter";
+            btnAjouterMateriel.UseVisualStyleBackColor = true;
+            btnAjouterMateriel.Click += btnAjouterMateriel_Click;
+            // 
+            // numQuantiteMateriel
+            // 
+            numQuantiteMateriel.Location = new Point(390, 112);
+            numQuantiteMateriel.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            numQuantiteMateriel.Name = "numQuantiteMateriel";
+            numQuantiteMateriel.Size = new Size(180, 31);
+            numQuantiteMateriel.TabIndex = 3;
+            numQuantiteMateriel.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            // 
+            // lblQuantiteMateriel
+            // 
+            lblQuantiteMateriel.AutoSize = true;
+            lblQuantiteMateriel.Location = new Point(36, 118);
+            lblQuantiteMateriel.Name = "lblQuantiteMateriel";
+            lblQuantiteMateriel.Size = new Size(80, 25);
+            lblQuantiteMateriel.TabIndex = 2;
+            lblQuantiteMateriel.Text = "Quantité";
+            // 
+            // txtNomMateriel
+            // 
+            txtNomMateriel.Location = new Point(390, 45);
+            txtNomMateriel.Name = "txtNomMateriel";
+            txtNomMateriel.Size = new Size(150, 31);
+            txtNomMateriel.TabIndex = 1;
+            // 
+            // lblNomMateriel
+            // 
+            lblNomMateriel.AutoSize = true;
+            lblNomMateriel.Location = new Point(36, 45);
+            lblNomMateriel.Name = "lblNomMateriel";
+            lblNomMateriel.Size = new Size(146, 25);
+            lblNomMateriel.TabIndex = 0;
+            lblNomMateriel.Text = "Nom du matériel";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-<<<<<<< HEAD
             ClientSize = new Size(1042, 857);
-            Controls.Add(tabControl1);
+            Controls.Add(tabMateriel);
             Controls.Add(lblTitre);
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
-            tabControl1.ResumeLayout(false);
+            tabMateriel.ResumeLayout(false);
             lblUsagerId.ResumeLayout(false);
             lblUsagerId.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvEmpruntsLivres).EndInit();
@@ -354,6 +528,10 @@
             tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numCapacite).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvParticipations).EndInit();
+            tabPage1.ResumeLayout(false);
+            tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvMateriels).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numQuantiteMateriel).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -361,7 +539,7 @@
         #endregion
 
         private Label lblTitre;
-        private TabControl tabControl1;
+        private TabControl tabMateriel;
         private TabPage lblUsagerId;
         private TabPage tabPage2;
         private Label label1;
@@ -389,14 +567,20 @@
         private Button btnInscrire;
         private ComboBox cboUsagerActivite;
         private Label label3;
-=======
-            ClientSize = new Size(1042, 715);
-            Name = "Form1";
-            Text = "Form1";
-            ResumeLayout(false);
-        }
-
-        #endregion
->>>>>>> e80ee4aa827c85436f43b3d8139a9c038cd52199
+        private TabPage tabPage1;
+        private Label lblQuantiteMateriel;
+        private TextBox txtNomMateriel;
+        private Label lblNomMateriel;
+        private ComboBox cboMateriel;
+        private Label label4;
+        private ComboBox cboUsagerMateriel;
+        private Label lblUsagerMateriel;
+        private Button btnAjouterMateriel;
+        private NumericUpDown numQuantiteMateriel;
+        private Button btnEmprunterMateriel;
+        private DateTimePicker dateTimePicker1;
+        private Label lblRetourPrevuMateriellblRetourPrevuMateriel;
+        private DataGridView dgvMateriels;
+        private Button btnRetournerMateriel;
     }
 }

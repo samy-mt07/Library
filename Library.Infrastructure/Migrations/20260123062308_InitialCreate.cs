@@ -115,8 +115,7 @@ namespace Library.Infrastructure.Migrations
                     UsagerId = table.Column<int>(type: "int", nullable: false),
                     MaterielId = table.Column<int>(type: "int", nullable: false),
                     DateEmprunt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    DateRetour = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    MaterielId1 = table.Column<int>(type: "int", nullable: true)
+                    DateRetour = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -127,11 +126,6 @@ namespace Library.Infrastructure.Migrations
                         principalTable: "Materiels",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_EmpruntsMateriel_Materiels_MaterielId1",
-                        column: x => x.MaterielId1,
-                        principalTable: "Materiels",
-                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_EmpruntsMateriel_Usagers_UsagerId",
                         column: x => x.UsagerId,
@@ -209,11 +203,6 @@ namespace Library.Infrastructure.Migrations
                 name: "IX_EmpruntsMateriel_MaterielId",
                 table: "EmpruntsMateriel",
                 column: "MaterielId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_EmpruntsMateriel_MaterielId1",
-                table: "EmpruntsMateriel",
-                column: "MaterielId1");
 
             migrationBuilder.CreateIndex(
                 name: "IX_EmpruntsMateriel_UsagerId",

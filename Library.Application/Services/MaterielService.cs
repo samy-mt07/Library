@@ -62,6 +62,38 @@ namespace Library.Application.Services
                 .Where(e => e.UsagerId == usagerId)
                 .ToListAsync();
         }
+        public async Task<List<Materiel>> GetAllMaterielsAsync()
+        {
+            return await _db.Materiels
+                .OrderBy(m => m.Nom)
+                .ToListAsync();
+        }
+
+        public async Task<List<Materiel>> GetMaterielsDisponiblesAsync()
+        {
+            return await _db.Materiels
+                .Where(m => m.Actif && m.QuantiteTotale > 0)
+                .OrderBy(m => m.Nom)
+                .ToListAsync();
+        }
+
+        public async Task AjouterMaterielAsync(string nom, int quantite)
+        {
+            if (string.IsNullOrWhiteSpace(nom))
+                throw new Exception("Nom obligatoire.");
+            if (quantite <= 0)
+                throw new Exception("Quantité invalide.");
+
+            _db.Materiels.Add(new Materiel
+            {
+                Nom = nom.Trim(),
+                QuantiteTotale = quantite,
+                Actif = true
+            });
+
+            await _db.SaveChangesAsync();
+        }
+
     }
 
 }

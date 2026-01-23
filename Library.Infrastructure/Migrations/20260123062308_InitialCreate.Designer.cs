@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Library.Infrastructure.Migrations
 {
     [DbContext(typeof(BibliothequeDbContext))]
-    [Migration("20260122053513_InitialCreate")]
+    [Migration("20260123062308_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -109,17 +109,12 @@ namespace Library.Infrastructure.Migrations
                     b.Property<int>("MaterielId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("MaterielId1")
-                        .HasColumnType("int");
-
                     b.Property<int>("UsagerId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("MaterielId");
-
-                    b.HasIndex("MaterielId1");
 
                     b.HasIndex("UsagerId");
 
@@ -281,14 +276,10 @@ namespace Library.Infrastructure.Migrations
             modelBuilder.Entity("Library.Domain.Entities.EmpruntMateriel", b =>
                 {
                     b.HasOne("Library.Domain.Entities.Materiel", "Materiel")
-                        .WithMany()
+                        .WithMany("Emprunts")
                         .HasForeignKey("MaterielId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
-
-                    b.HasOne("Library.Domain.Entities.Materiel", null)
-                        .WithMany("Emprunts")
-                        .HasForeignKey("MaterielId1");
 
                     b.HasOne("Library.Domain.Entities.Usager", "Usager")
                         .WithMany()

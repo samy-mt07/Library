@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\aissi\\OneDrive\\Documents\\DEC_PROGRAMMATION_INFORMATIQUE\\3-Troisième_SESSION\\BD_AVANCER\\LibraryManagement\\Library.Infrastructure\\Library.Infrastructure.csproj": {}
+    "C:\\Users\\Wizards station\\Downloads\\Library-main (1)\\Library-main\\Library.Infrastructure\\Library.Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\aissi\\OneDrive\\Documents\\DEC_PROGRAMMATION_INFORMATIQUE\\3-Troisième_SESSION\\BD_AVANCER\\LibraryManagement\\Library.Domain\\Library.Domain.csproj": {
+    "C:\\Users\\Wizards station\\Downloads\\Library-main (1)\\Library-main\\Library.Domain\\Library.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\aissi\\OneDrive\\Documents\\DEC_PROGRAMMATION_INFORMATIQUE\\3-Troisième_SESSION\\BD_AVANCER\\LibraryManagement\\Library.Domain\\Library.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Wizards station\\Downloads\\Library-main (1)\\Library-main\\Library.Domain\\Library.Domain.csproj",
         "projectName": "Library.Domain",
-        "projectPath": "C:\\Users\\aissi\\OneDrive\\Documents\\DEC_PROGRAMMATION_INFORMATIQUE\\3-Troisième_SESSION\\BD_AVANCER\\LibraryManagement\\Library.Domain\\Library.Domain.csproj",
-        "packagesPath": "C:\\Users\\aissi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\aissi\\OneDrive\\Documents\\DEC_PROGRAMMATION_INFORMATIQUE\\3-Troisième_SESSION\\BD_AVANCER\\LibraryManagement\\Library.Domain\\obj\\",
+        "projectPath": "C:\\Users\\Wizards station\\Downloads\\Library-main (1)\\Library-main\\Library.Domain\\Library.Domain.csproj",
+        "packagesPath": "C:\\Users\\Wizards station\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Wizards station\\Downloads\\Library-main (1)\\Library-main\\Library.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\aissi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Wizards station\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -44,7 +44,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -70,47 +70,29 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[8.0.23, 8.0.23]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\aissi\\OneDrive\\Documents\\DEC_PROGRAMMATION_INFORMATIQUE\\3-Troisième_SESSION\\BD_AVANCER\\LibraryManagement\\Library.Infrastructure\\Library.Infrastructure.csproj": {
+    "C:\\Users\\Wizards station\\Downloads\\Library-main (1)\\Library-main\\Library.Infrastructure\\Library.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\aissi\\OneDrive\\Documents\\DEC_PROGRAMMATION_INFORMATIQUE\\3-Troisième_SESSION\\BD_AVANCER\\LibraryManagement\\Library.Infrastructure\\Library.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\Wizards station\\Downloads\\Library-main (1)\\Library-main\\Library.Infrastructure\\Library.Infrastructure.csproj",
         "projectName": "Library.Infrastructure",
-        "projectPath": "C:\\Users\\aissi\\OneDrive\\Documents\\DEC_PROGRAMMATION_INFORMATIQUE\\3-Troisième_SESSION\\BD_AVANCER\\LibraryManagement\\Library.Infrastructure\\Library.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\aissi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\aissi\\OneDrive\\Documents\\DEC_PROGRAMMATION_INFORMATIQUE\\3-Troisième_SESSION\\BD_AVANCER\\LibraryManagement\\Library.Infrastructure\\obj\\",
+        "projectPath": "C:\\Users\\Wizards station\\Downloads\\Library-main (1)\\Library-main\\Library.Infrastructure\\Library.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Wizards station\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Wizards station\\Downloads\\Library-main (1)\\Library-main\\Library.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\aissi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Wizards station\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -125,8 +107,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\aissi\\OneDrive\\Documents\\DEC_PROGRAMMATION_INFORMATIQUE\\3-Troisième_SESSION\\BD_AVANCER\\LibraryManagement\\Library.Domain\\Library.Domain.csproj": {
-                "projectPath": "C:\\Users\\aissi\\OneDrive\\Documents\\DEC_PROGRAMMATION_INFORMATIQUE\\3-Troisième_SESSION\\BD_AVANCER\\LibraryManagement\\Library.Domain\\Library.Domain.csproj"
+              "C:\\Users\\Wizards station\\Downloads\\Library-main (1)\\Library-main\\Library.Domain\\Library.Domain.csproj": {
+                "projectPath": "C:\\Users\\Wizards station\\Downloads\\Library-main (1)\\Library-main\\Library.Domain\\Library.Domain.csproj"
               }
             }
           }
@@ -141,7 +123,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -181,30 +163,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[8.0.23, 8.0.23]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[8.0.23, 8.0.23]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

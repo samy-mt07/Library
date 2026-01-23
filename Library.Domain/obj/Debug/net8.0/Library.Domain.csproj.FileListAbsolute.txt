@@ -23,3 +23,28 @@ C:\Users\aissi\OneDrive\Documents\DEC_PROGRAMMATION_INFORMATIQUE\3-Troisième_SE
 C:\Users\aissi\OneDrive\Documents\DEC_PROGRAMMATION_INFORMATIQUE\3-Troisième_SESSION\BD_AVANCER\LibraryManagement\Library.Domain\obj\Debug\net8.0\Library.Domain.csproj.AssemblyReference.cache
 C:\Users\aissi\OneDrive\Documents\DEC_PROGRAMMATION_INFORMATIQUE\3-Troisième_SESSION\BD_AVANCER\LibraryManagement\Library.Domain\obj\Debug\net8.0\Library..F93CCB0A.Up2Date
 C:\Users\aissi\OneDrive\Documents\DEC_PROGRAMMATION_INFORMATIQUE\3-Troisième_SESSION\BD_AVANCER\LibraryManagement\Library.Domain\obj\Debug\net8.0\Library.Domain.sourcelink.json
+C:\Users\Wizards station\Downloads\Library-main (1)\Library-main\Library.Domain\bin\Debug\net8.0\Library.Domain.exe
+C:\Users\Wizards station\Downloads\Library-main (1)\Library-main\Library.Domain\bin\Debug\net8.0\Library.Domain.deps.json
+C:\Users\Wizards station\Downloads\Library-main (1)\Library-main\Library.Domain\bin\Debug\net8.0\Library.Domain.runtimeconfig.json
+C:\Users\Wizards station\Downloads\Library-main (1)\Library-main\Library.Domain\bin\Debug\net8.0\Library.Domain.dll
+C:\Users\Wizards station\Downloads\Library-main (1)\Library-main\Library.Domain\bin\Debug\net8.0\Library.Domain.pdb
+C:\Users\Wizards station\Downloads\Library-main (1)\Library-main\Library.Domain\bin\Debug\net8.0\Microsoft.Extensions.Configuration.dll
+C:\Users\Wizards station\Downloads\Library-main (1)\Library-main\Library.Domain\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Wizards station\Downloads\Library-main (1)\Library-main\Library.Domain\bin\Debug\net8.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\Wizards station\Downloads\Library-main (1)\Library-main\Library.Domain\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\Wizards station\Downloads\Library-main (1)\Library-main\Library.Domain\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\Wizards station\Downloads\Library-main (1)\Library-main\Library.Domain\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\Wizards station\Downloads\Library-main (1)\Library-main\Library.Domain\bin\Debug\net8.0\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\Wizards station\Downloads\Library-main (1)\Library-main\Library.Domain\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+C:\Users\Wizards station\Downloads\Library-main (1)\Library-main\Library.Domain\obj\Debug\net8.0\Library.Domain.csproj.AssemblyReference.cache
+C:\Users\Wizards station\Downloads\Library-main (1)\Library-main\Library.Domain\obj\Debug\net8.0\Library.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Wizards station\Downloads\Library-main (1)\Library-main\Library.Domain\obj\Debug\net8.0\Library.Domain.AssemblyInfoInputs.cache
+C:\Users\Wizards station\Downloads\Library-main (1)\Library-main\Library.Domain\obj\Debug\net8.0\Library.Domain.AssemblyInfo.cs
+C:\Users\Wizards station\Downloads\Library-main (1)\Library-main\Library.Domain\obj\Debug\net8.0\Library.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Wizards station\Downloads\Library-main (1)\Library-main\Library.Domain\obj\Debug\net8.0\Library.Domain.sourcelink.json
+C:\Users\Wizards station\Downloads\Library-main (1)\Library-main\Library.Domain\obj\Debug\net8.0\Library..F93CCB0A.Up2Date
+C:\Users\Wizards station\Downloads\Library-main (1)\Library-main\Library.Domain\obj\Debug\net8.0\Library.Domain.dll
+C:\Users\Wizards station\Downloads\Library-main (1)\Library-main\Library.Domain\obj\Debug\net8.0\refint\Library.Domain.dll
+C:\Users\Wizards station\Downloads\Library-main (1)\Library-main\Library.Domain\obj\Debug\net8.0\Library.Domain.pdb
+C:\Users\Wizards station\Downloads\Library-main (1)\Library-main\Library.Domain\obj\Debug\net8.0\Library.Domain.genruntimeconfig.cache
+C:\Users\Wizards station\Downloads\Library-main (1)\Library-main\Library.Domain\obj\Debug\net8.0\ref\Library.Domain.dll
