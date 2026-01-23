@@ -17,7 +17,7 @@ namespace Library.Application.Services
             _factory = factory;
         }
 
-        // ✅ 1) Liste des activités (pour remplir cboActivite)
+        
         public async Task<List<Activite>> GetAllAsync()
         {
             using var db = _factory.Create();
@@ -27,7 +27,7 @@ namespace Library.Application.Services
                 .ToListAsync();
         }
 
-        // ✅ 2) Créer une activité (pour tab Activités)
+    
         public async Task CreerAsync(string titre, TypeActivite type, int capaciteMax)
         {
             using var db = _factory.Create();
@@ -52,7 +52,7 @@ namespace Library.Application.Services
             await db.SaveChangesAsync();
         }
 
-        // ✅ 3) Inscrire un usager à une activité (avec validations TP)
+       
         public async Task InscrireAsync(int usagerId, int activiteId)
         {
             using var db = _factory.Create();
@@ -92,7 +92,6 @@ namespace Library.Application.Services
             await db.SaveChangesAsync();
         }
 
-        // ✅ 4) Récupérer les participations (pour dgvParticipations)
         public async Task<List<Participation>> GetParticipationsAsync()
         {
             using var db = _factory.Create();
