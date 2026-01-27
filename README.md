@@ -14,60 +14,60 @@ Le système doit permettre une gestion complète (CRUD) pour chaque domaine fonc
 
 2. Besoins fonctionnels
 2.1 Gestion des livres
-●	Ajouter, consulter, modifier et supprimer des livres.
+Ajouter, consulter, modifier et supprimer des livres.
 
-●	Conserver les informations essentielles : titre, auteur(s), catégorie(s), quantité d’exemplaires disponibles.
+Conserver les informations essentielles : titre, auteur(s), catégorie(s), quantité d’exemplaires disponibles.
 
-●	Permettre la consultation de la liste des livres avec des fonctions de recherche et de filtrage : 
+Permettre la consultation de la liste des livres avec des fonctions de recherche et de filtrage : 
 
 2.2 Gestion des usagers
-●	Ajouter, consulter, modifier et supprimer un usager.
+Ajouter, consulter, modifier et supprimer un usager.
 
-●	Enregistrer les coordonnées de contact.
+Enregistrer les coordonnées de contact.
 
-●	Gérer le statut d’un usager (actif ou inactif).
+Gérer le statut d’un usager (actif ou inactif).
 
 2.3 Gestion des emprunts
-●	Enregistrer les emprunts de livres par les usagers (date d’emprunt, date de retour prévue).
+Enregistrer les emprunts de livres par les usagers (date d’emprunt, date de retour prévue).
 
-●	Suivre l’état d’un emprunt (en cours, en retard, retourné).
+Suivre l’état d’un emprunt (en cours, en retard, retourné).
 
-●	Consulter l’historique des emprunts d’un usager.
-●	 
+Consulter l’historique des emprunts d’un usager.
+ 
 
 2.4 Gestion des activités (concours et événements)
-●	Créer et gérer des activités regroupant les concours et événements sous une entité commune.
+Créer et gérer des activités regroupant les concours et événements sous une entité commune.
 
-●	Enregistrer les participations des usagers.
+Enregistrer les participations des usagers.
 
-●	Gérer la capacité maximale et consulter la liste des participants.
-●	 
+Gérer la capacité maximale et consulter la liste des participants.
+ 
 
 2.5 Gestion du matériel
-●	Enregistrer et gérer le matériel empruntable (ex. : laptop, projecteur).
+Enregistrer et gérer le matériel empruntable (ex. : laptop, projecteur).
 
-●	Suivre la disponibilité, les emprunts et l’historique du matériel.
-●	 
+Suivre la disponibilité, les emprunts et l’historique du matériel.
+ 
 
 2.6 Rapports
-●	Générer des synthèses ciblées :
+Générer des synthèses ciblées :
 
-○	Emprunts par usager.
+Emprunts par usager.
 
-○	Participations par activité.
+Participations par activité.
 
-○	Évaluations et statistiques sur les livres (moyenne, commentaires).
+Évaluations et statistiques sur les livres (moyenne, commentaires).
 
 2.7 Mises à jour et corrections
-●	Modifier ou supprimer un livre, un usager, un emprunt, une participation ou un emprunt de matériel lorsque nécessaire.
+Modifier ou supprimer un livre, un usager, un emprunt, une participation ou un emprunt de matériel lorsque nécessaire.
  
 
 3. Contraintes et attentes du client
-●	L’intégrité des données doit être respectée : la suppression d’un usager ou d’un livre ne doit pas entraîner la perte de l’historique des emprunts ou des évaluations.
+L’intégrité des données doit être respectée : la suppression d’un usager ou d’un livre ne doit pas entraîner la perte de l’historique des emprunts ou des évaluations.
 
-●	L’interface utilisateur doit être simple, cohérente et facile à utiliser.
+L’interface utilisateur doit être simple, cohérente et facile à utiliser.
 
-●	Le projet doit être structuré, documenté et livré avec un historique Git clair et cohérent.
+Le projet doit être structuré, documenté et livré avec un historique Git clair et cohérent.
 
 
 4. Décomposition en modules fonctionnels
